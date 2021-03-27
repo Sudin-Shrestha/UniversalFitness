@@ -5,6 +5,7 @@ import 'package:universal_fitness/pages/Diet.dart';
 import 'dart:convert' as convert;
 
 import 'package:universal_fitness/pages/Exercise.dart';
+import 'package:universal_fitness/pages/bmi/BmiInput.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -183,7 +184,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Exercise()),
+                                builder: (context) => BmiInput()),
                           );
                         },
                         child: Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
+import 'package:universal_fitness/pages/BodyBuildingDiet.dart';
 import 'package:universal_fitness/pages/Gain.dart';
 import 'package:universal_fitness/pages/NaturalDiet.dart';
 import 'package:universal_fitness/pages/ProteinDiet.dart';
@@ -57,7 +58,7 @@ class _Diet extends State<Diet> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomePage()),
+                              builder: (context) => WeeklyDiet()),
                         );
                       },
                       child: Container(
