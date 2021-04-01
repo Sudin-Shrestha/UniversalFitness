@@ -41,6 +41,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
+    - images/abs/
+    - images/abs/absPng/
+    - images/cardio/
+    - images/cardio/cardioPng/
+    - images/hiit/
 
   fonts:
      - family: Pacifico

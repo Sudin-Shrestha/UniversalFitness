@@ -5,10 +5,11 @@ import 'package:universal_fitness/pages/Diet.dart';
 import 'dart:convert' as convert;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:universal_fitness/pages/Utility.dart';
-import 'package:universal_fitness/pages/bmi/BmiResult.dart';
 import 'icon_content.dart';
 import 'ReuseCard.dart';
-import 'BmiCalc.dart';
+import 'BmrCalc.dart';
+import 'BmrResult.dart';
+
 
 
 import 'package:universal_fitness/pages/home.dart';
@@ -17,13 +18,13 @@ const bottomContainerHeight = 70;
 const cardColor = Color(0xffDEE4E7);
 const clickedColor = Color(0xffb7c6bf);
 
-class BmiInput extends StatefulWidget {
+class BmrInput extends StatefulWidget {
 
   @override
-  _BmiInput createState() => _BmiInput();
+  _BmrInput createState() => _BmrInput();
 }
 
-class _BmiInput extends State<BmiInput> {
+class _BmrInput extends State<BmrInput> {
 
   Color maleCardColor = cardColor;
   Color femaleCardColor = cardColor;
@@ -71,7 +72,7 @@ class _BmiInput extends State<BmiInput> {
             );
           },
         ),
-        title: const Text('BMI Calculator'),
+        title: const Text('BMR Calculator'),
         actions: <Widget>[
         ],
       ),
@@ -79,20 +80,20 @@ class _BmiInput extends State<BmiInput> {
         children: [
           Expanded(child: Row(
             children: [
-                Expanded(child: GestureDetector(
-                  onTap: (){
-                    setState(() {
-                      updateColor(1);
-                    });
-                  },
-                  child: ReuseCard(
-                    colour: maleCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
+              Expanded(child: GestureDetector(
+                onTap: (){
+                  setState(() {
+                    updateColor(1);
+                  });
+                },
+                child: ReuseCard(
+                  colour: maleCardColor,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.mars,
+                    label: 'MALE',
                   ),
-                ),),
+                ),
+              ),),
 
               Expanded(child: GestureDetector(
                 onTap: (){
@@ -106,39 +107,6 @@ class _BmiInput extends State<BmiInput> {
                     icon: FontAwesomeIcons.venus,
                     label: 'FEMALE',
                   ),
-                ),
-              ),),
-            ],
-          ),),
-          Expanded(child: Row(
-            children: [
-              Expanded(child: ReuseCard(
-                colour: cardColor,
-                cardChild: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('HEIGHT', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Text(height.toString(), style: TextStyle(fontWeight: FontWeight.w900, fontSize: 50),),
-                        Text("cm", style: TextStyle(fontSize: 20),),
-                        Slider(
-                            value: height.toDouble(),
-                            min: 120,
-                            max: 220,
-                            activeColor: Color(0xFFEB1555),
-                            inactiveColor: Color(0xFF8D8E98),
-                            onChanged: (double newVal) {
-                              setState(() {
-                                height = newVal.round();
-                              });
-                            })
-                      ],
-                    )
-                  ],
                 ),
               ),),
             ],
@@ -215,17 +183,51 @@ class _BmiInput extends State<BmiInput> {
               ),),
             ],
           ),),
+          Expanded(child: Row(
+            children: [
+              Expanded(child: ReuseCard(
+                colour: cardColor,
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('HEIGHT', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(height.toString(), style: TextStyle(fontWeight: FontWeight.w900, fontSize: 50),),
+                        Text("cm", style: TextStyle(fontSize: 20),),
+                        Slider(
+                            value: height.toDouble(),
+                            min: 120,
+                            max: 220,
+                            activeColor: Color(0xFFEB1555),
+                            inactiveColor: Color(0xFF8D8E98),
+                            onChanged: (double newVal) {
+                              setState(() {
+                                height = newVal.round();
+                              });
+                            })
+                      ],
+                    )
+                  ],
+                ),
+              ),),
+            ],
+          ),),
+
           GestureDetector(
             onTap: (){
-              BmiCalc calc = BmiCalc(height: height, weight: weight);
+              BmrCalc calc = BmrCalc(height: height, weight: weight, age: age);
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => BmiResult(
-                      bmiResult: calc.calBmi(),
-                      resultText: calc.getResult(),
-                      interpretation: calc.getInterpret(),
-                    ),),
+                  builder: (context) => BmrResult(
+                    bmrResult: calc.calBmr(),
+                    resultText: calc.getResults(),
+                    interpretation: calc.getInterprets(),
+                  ),),
               );
             },
             child: Container(

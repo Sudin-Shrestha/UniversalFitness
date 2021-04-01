@@ -1,11 +1,15 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:universal_fitness/pages/Cardio.dart';
 import 'package:universal_fitness/pages/Diet.dart';
 import 'dart:convert' as convert;
 
 import 'package:universal_fitness/pages/Exercise.dart';
+import 'package:universal_fitness/pages/Trainer.dart';
+import 'package:universal_fitness/pages/Utility.dart';
 import 'package:universal_fitness/pages/bmi/BmiInput.dart';
+import 'package:universal_fitness/pages/bmi/BmrInput.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -125,7 +129,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Exercise()),
+                                builder: (context) => Cardio()),
                           );
                         },
                         child: Container(
@@ -184,7 +188,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BmiInput()),
+                                builder: (context) => Utility()),
                           );
                         },
                         child: Container(
@@ -209,7 +213,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Diet()),
+                                builder: (context) => Trainer()),
                           );
                         },
                         child: Container(
