@@ -46,6 +46,18 @@ flutter:
     - images/cardio/
     - images/cardio/cardioPng/
     - images/hiit/
+    - images/chest/
+    - images/chest/chestPng/
+    - images/back/
+    - images/back/backPng/
+    - images/biseps/
+    - images/biseps/bisepsPng/
+    - images/leg/
+    - images/leg/legPng/
+    - images/shoulder/
+    - images/shoulder/shoulderPng/
+    - images/tricep/
+    - images/tricep/tricepPng/
 
   fonts:
      - family: Pacifico

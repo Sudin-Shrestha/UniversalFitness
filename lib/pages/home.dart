@@ -36,7 +36,7 @@ class _HomePage extends State<HomePage> {
               );
             },
           ),
-          title: const Text('Home'),
+          title: const Text('Universal Physical Fitness', style: TextStyle(fontFamily: 'Pacifico', fontSize: 20, letterSpacing: 1),),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.add_alert),
@@ -51,16 +51,21 @@ class _HomePage extends State<HomePage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  SizedBox(
+                    width: double.infinity,
+                    height: 10,
+                  ),
                   Text('Welcome Member',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Pacifico',
                       fontSize: 30,
+                      letterSpacing: 1
                     ),
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 20,
+                    height: 15,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

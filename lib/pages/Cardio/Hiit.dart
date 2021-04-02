@@ -16,57 +16,58 @@ class HiitList extends StatefulWidget {
 class _HiitList extends State<HiitList> {
 
   var pngImage = [
-    "images/hiit/Kettlebell_alternate_curls.gif",
-    "images/hiit/Kettlebell_alternate_shoulder_press.gif",
-    "images/hiit/Kettlebell_alternate_rows.gif",
-    "images/hiit/Kettlebell_clean_and_press.gif",
-    "images/hiit/Kettlebell_double_thrusters.gif",
-    "images/hiit/Kettlebell_floor_press.gif",
-    "images/hiit/Kettlebell_goblet_squat.gif",
-    "images/hiit/Kettlebell_one_arm_press.gif",
-    "images/hiit/Kettlebell_one_arm_rows.gif",
-    "images/hiit/Kettlebell_one_arm_swing.gif",
-    "images/hiit/Kettlebell_overhead_press.gif",
-    "images/hiit/Kettlebell_pistol_squat.gif",
-    "images/hiit/Kettlebell_plyo_push_ups.gif",
-    "images/hiit/Kettlebell_renegade_rows.gif",
-    "images/hiit/Kettlebell_rows.gif",
-    "images/hiit/Kettlebell_seated_press.gif",
-    "images/hiit/Kettlebell_snatch.gif",
-    "images/hiit/Kettlebell_turkish_get_up.gif",
-    "images/hiit/Kettlebell_upright_rows.gif"
+    "images/hiit/kettlebell_alternate_curls.gif",
+    "images/hiit/kettlebell_alternate_shoulder_press.gif",
+    "images/hiit/kettlebell_alternating_rows.gif",
+    "images/hiit/kettlebell_clean_and_press.gif",
+    "images/hiit/kettlebell_double_thrusters.gif",
+    "images/hiit/kettlebell_floor_press.gif",
+    "images/hiit/kettlebell_goblet_squat.gif",
+    "images/hiit/kettlebell_one_arm_floor_press.gif",
+    "images/hiit/kettlebell_one_arm_rows.gif",
+    "images/hiit/kettlebell_one_arm_swing.gif",
+    "images/hiit/kettlebell_overhead_press.gif",
+    "images/hiit/kettlebell_pistol_squat.gif",
+    "images/hiit/kettlebell_plyo_push_ups.gif",
+    "images/hiit/kettlebell_renegade_rows.gif",
+    "images/hiit/kettlebell_rows.gif",
+    "images/hiit/kettlebell_seated_press.gif",
+    "images/hiit/kettlebell_snatch.gif",
+    "images/hiit/kettlebell_turkish_get_up.gif",
+    "images/hiit/kettlebell_upright_rows.gif"
   ];
 
   var gifImage = [
-    "images/hiit/Kettlebell_alternate_curls.gif",
-    "images/hiit/Kettlebell_alternate_shoulder_press.gif",
-    "images/hiit/Kettlebell_alternate_rows.gif",
-    "images/hiit/Kettlebell_clean_and_press.gif",
-    "images/hiit/Kettlebell_double_thrusters.gif",
-    "images/hiit/Kettlebell_floor_press.gif",
-    "images/hiit/Kettlebell_goblet_squat.gif",
-    "images/hiit/Kettlebell_one_arm_floor_press.gif",
-    "images/hiit/Kettlebell_one_arm_rows.gif",
-    "images/hiit/Kettlebell_one_arm_swing.gif",
-    "images/hiit/Kettlebell_overhead_press.gif",
-    "images/hiit/Kettlebell_pistol_squat.gif",
-    "images/hiit/Kettlebell_plyo_push_ups.gif",
-    "images/hiit/Kettlebell_renegade_rows.gif",
-    "images/hiit/Kettlebell_rows.gif",
-    "images/hiit/Kettlebell_seated_press.gif",
-    "images/hiit/Kettlebell_snatch.gif",
-    "images/hiit/Kettlebell_turkish_get_up.gif",
-    "images/hiit/Kettlebell_upright_rows.gif"
+    "images/hiit/kettlebell_alternate_curls.gif",
+    "images/hiit/kettlebell_alternate_shoulder_press.gif",
+    "images/hiit/kettlebell_alternating_rows.gif",
+    "images/hiit/kettlebell_clean_and_press.gif",
+    "images/hiit/kettlebell_double_thrusters.gif",
+    "images/hiit/kettlebell_floor_press.gif",
+    "images/hiit/kettlebell_goblet_squat.gif",
+    "images/hiit/kettlebell_one_arm_floor_press.gif",
+    "images/hiit/kettlebell_one_arm_rows.gif",
+    "images/hiit/kettlebell_one_arm_swing.gif",
+    "images/hiit/kettlebell_overhead_press.gif",
+    "images/hiit/kettlebell_pistol_squat.gif",
+    "images/hiit/kettlebell_plyo_push_ups.gif",
+    "images/hiit/kettlebell_renegade_rows.gif",
+    "images/hiit/kettlebell_rows.gif",
+    "images/hiit/kettlebell_seated_press.gif",
+    "images/hiit/kettlebell_snatch.gif",
+    "images/hiit/kettlebell_turkish_get_up.gif",
+    "images/hiit/kettlebell_upright_rows.gif"
   ];
 
   var exerciseName = [
     "Kettlebell Alternate Curls",
-    "Kettlebell Alternate Rows",
+    "Kettlebell Shoulder Press",
+    "Kettlebell Alternating Rows",
     "Kettlebell Clean and Press",
     "Kettlebell Double Thrusters",
     "Kettlebell Floor Press",
     "Kettlebell Goblet Squat",
-    "Kettlebell One Arm Floor Press",
+    "Kettlebell One Arm Press",
     "Kettlebell One Arm Rows",
     "Kettlebell One Arm Swing",
     "Kettlebell Overhead Press",
@@ -78,6 +79,28 @@ class _HiitList extends State<HiitList> {
     "Kettlebell Snatch",
     "Kettlebell Turkish Get up",
     "Kettlebell Upright Rows"
+  ];
+
+  var subName = [
+    "Alternate Curls",
+    "Shoulder Press",
+    "Alternating Rows",
+    "Clean and Press",
+    "Double Thrusters",
+    "Floor Press",
+    "Goblet Squat",
+    "One Arm Press",
+    "One Arm Rows",
+    "One Arm Swing",
+    "Overhead Press",
+    "Pistol Squat",
+    "Plyo Push Ups",
+    "Rows",
+    "Seated Press",
+    "Alternate Curls",
+    "Snatch",
+    "Turkish Get up",
+    "Upright Rows"
   ];
 
   var exerciseType = [
@@ -144,7 +167,7 @@ class _HiitList extends State<HiitList> {
             );
           },
         ),
-        title: const Text('Abs'),
+        title: const Text('HIIT'),
         actions: <Widget>[
         ],
       ),
@@ -154,7 +177,7 @@ class _HiitList extends State<HiitList> {
             return GestureDetector(
               onTap: (){
                 // This Will Call When User Click On ListView Item
-                showDialogFunc(context, gifImage[index], exerciseName[index], descList[index]);
+                showDialogFunc(context, gifImage[index], subName[index], descList[index]);
 
               },
               child: Card(

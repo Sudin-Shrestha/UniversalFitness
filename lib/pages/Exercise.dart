@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:universal_fitness/pages/Exercises/Back.dart';
+import 'package:universal_fitness/pages/Exercises/Biseps.dart';
+import 'package:universal_fitness/pages/Exercises/Chest.dart';
+import 'package:universal_fitness/pages/Exercises/Leg.dart';
+import 'package:universal_fitness/pages/Exercises/Tricep.dart';
+import 'package:universal_fitness/pages/Exercises/shoulder.dart';
 import 'dart:convert' as convert;
 
 import 'package:universal_fitness/pages/home.dart';
@@ -39,11 +45,20 @@ class _Exercise extends State<Exercise> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  child: new Image(image: AssetImage("images/chest.png"),
-                    fit: BoxFit.fill,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Chest()),
+                    );
+                  },
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    child: new Image(image: AssetImage("images/chest.png"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -55,12 +70,21 @@ class _Exercise extends State<Exercise> {
                     ),
                   ),
                 ),
-                Container(
-                  height: 200,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Back()),
+                    );
+                  },
+                  child: Container(
+                    height: 200,
 
-                  width: double.infinity,
-                  child: new Image(image: AssetImage("images/back.png"),
-                    fit: BoxFit.fill,
+                    width: double.infinity,
+                    child: new Image(image: AssetImage("images/back.png"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -72,12 +96,71 @@ class _Exercise extends State<Exercise> {
                     ),
                   ),
                 ),
-                Container(
-                  height: 200,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Biseps()),
+                    );
+                  },
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    child: new Image(image: AssetImage("images/biseps.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: double.infinity,
+                  height: 2,
+                  child: const DecoratedBox(
+                    decoration: const BoxDecoration(
+                        color: Color(0xffF1C40E)
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Shoulder()),
+                    );
+                  },
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    child: new Image(image: AssetImage("images/shoulder.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: double.infinity,
+                  height: 2,
+                  child: const DecoratedBox(
+                    decoration: const BoxDecoration(
+                        color: Color(0xffF1C40E)
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Tricep()),
+                    );
+                  },
+                  child: Container(
+                    height: 200,
 
-                  width: double.infinity,
-                  child: new Image(image: AssetImage("images/biseps.png"),
-                    fit: BoxFit.fill,
+                    width: double.infinity,
+                    child: new Image(image: AssetImage("images/traps.png"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -89,44 +172,20 @@ class _Exercise extends State<Exercise> {
                     ),
                   ),
                 ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  child: new Image(image: AssetImage("images/shoulder.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                const SizedBox(
-                  width: double.infinity,
-                  height: 2,
-                  child: const DecoratedBox(
-                    decoration: const BoxDecoration(
-                        color: Color(0xffF1C40E)
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Leg()),
+                    );
+                  },
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    child: new Image(image: AssetImage("images/leg.png"),
+                      fit: BoxFit.fill,
                     ),
-                  ),
-                ),
-                Container(
-                  height: 200,
-
-                  width: double.infinity,
-                  child: new Image(image: AssetImage("images/traps.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                const SizedBox(
-                  width: double.infinity,
-                  height: 2,
-                  child: const DecoratedBox(
-                    decoration: const BoxDecoration(
-                        color: Color(0xffF1C40E)
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  child: new Image(image: AssetImage("images/leg.png"),
-                    fit: BoxFit.fill,
                   ),
                 ),
               ],

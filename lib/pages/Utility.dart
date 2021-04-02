@@ -49,55 +49,80 @@ class _Utility extends State<Utility> {
                 height: 20,
                 width: double.infinity,
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => BmiInput()),
-                  );
-                },
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
-                  height: 50,
-                  width: 350,
-                  child: Text("BMI Calculator", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffDEE4E7),
-                        ),
-                      ]
+
+              // Btn
+              Container(
+                constraints: BoxConstraints(maxWidth: 350.0, minHeight: 60.0),
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BmiInput()),
+                    );
+                  },
+                  color: Color(0xffDEE4E7),
+                  child: Padding(
+                    padding: EdgeInsets.all(0),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            'Bmi Calculator',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Colors.black,
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-                width: double.infinity,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => BmrInput()),
-                  );
-                },
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
-                  height: 50,
-                  width: 350,
-                  child: Text("BMR Calculator", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffDEE4E7),
-                        ),
-                      ]
+
+              Container(
+                constraints: BoxConstraints(maxWidth: 350.0, minHeight: 60.0),
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BmrInput()),
+                    );
+                  },
+                  color: Color(0xffDEE4E7),
+                  child: Padding(
+                    padding: EdgeInsets.all(0),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            'Bmr Calculator',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Colors.black,
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),

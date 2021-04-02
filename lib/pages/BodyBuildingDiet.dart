@@ -75,10 +75,9 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                },
                child: Container(
                  alignment: Alignment.centerLeft,
-                 padding: EdgeInsets.only(left: 20),
+                 padding: EdgeInsets.only(left: 20, right: 20),
                  height: 50,
                  width: 350,
-                 child: Text("Sunday Plan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                  decoration: BoxDecoration(
                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
                      boxShadow: [
@@ -86,6 +85,23 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                          color: Color(0xffDEE4E7),
                        ),
                      ]
+                 ),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     Text(
+                       'Sunday Plan',
+                       style: TextStyle(
+                         fontSize: 20,
+                         fontWeight: FontWeight.bold,
+                         color: Colors.black,
+                       ),
+                     ),
+                     Icon(
+                       Icons.arrow_forward_ios_rounded,
+                       color: Colors.black,
+                     )
+                   ],
                  ),
                ),
              ),
@@ -103,10 +119,9 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   height: 50,
                   width: 350,
-                  child: Text("Monday Plan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       boxShadow: [
@@ -114,6 +129,23 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                           color: Color(0xffDEE4E7),
                         ),
                       ]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Monday Plan',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.black,
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -131,10 +163,9 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   height: 50,
                   width: 350,
-                  child: Text("Tuesday Plan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       boxShadow: [
@@ -142,6 +173,23 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                           color: Color(0xffDEE4E7),
                         ),
                       ]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Tuesday Plan',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.black,
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -159,10 +207,9 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   height: 50,
                   width: 350,
-                  child: Text("Wednesday Plan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       boxShadow: [
@@ -170,6 +217,23 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                           color: Color(0xffDEE4E7),
                         ),
                       ]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Wednesday Plan',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.black,
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -187,10 +251,9 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   height: 50,
                   width: 350,
-                  child: Text("Thursday Plan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       boxShadow: [
@@ -198,6 +261,23 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                           color: Color(0xffDEE4E7),
                         ),
                       ]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Thursday Plan',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.black,
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -215,10 +295,9 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   height: 50,
                   width: 350,
-                  child: Text("Friday Plan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       boxShadow: [
@@ -226,6 +305,23 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                           color: Color(0xffDEE4E7),
                         ),
                       ]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Friday Plan',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.black,
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -243,10 +339,9 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   height: 50,
                   width: 350,
-                  child: Text("Saturday Plan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       boxShadow: [
@@ -254,6 +349,23 @@ class _WeeklyDiet extends State<WeeklyDiet> {
                           color: Color(0xffDEE4E7),
                         ),
                       ]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Saturday Plan',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.black,
+                      )
+                    ],
                   ),
                 ),
               ),
