@@ -6,6 +6,8 @@ import 'package:universal_fitness/pages/Diet.dart';
 import 'dart:convert' as convert;
 
 import 'package:universal_fitness/pages/Exercise.dart';
+import 'package:universal_fitness/pages/Pedometer.dart';
+import 'package:universal_fitness/pages/Strength.dart';
 import 'package:universal_fitness/pages/Trainer.dart';
 import 'package:universal_fitness/pages/Utility.dart';
 import 'package:universal_fitness/pages/bmi/BmiInput.dart';
@@ -19,6 +21,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
+
+  // int selectedIndex = 0;
+  // final _pageOption = [HomePage(), Exercise(), DailyStepsPage(), Cardio()];
 
   // This widget is the root of your application.
   @override
@@ -47,10 +52,63 @@ class _HomePage extends State<HomePage> {
             ),
           ],
         ),
-        body: SafeArea(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xff102B46),
+              ),
+              child: Text(
+                'Welcome Member',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            // DrawerHeader(
+            //     decoration: BoxDecoration(
+            //         color: Color(0xff102B46),
+            //       ),
+            //   child: Column(
+            //     children: [
+            //       CircleAvatar(
+            //         radius: 60.0,
+            //         backgroundColor: const Color(0xFF778899),
+            //         backgroundImage: NetworkImage("https://www.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg"),
+            //       ),
+            //       Text("Chutia banaya"),
+            //     ],
+            //   ),
+            // ),
+
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text('Messages'),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('Logout'),
+            ),
+          ],
+        ),
+      ),
+        body:
+        SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  // _pageOption[selectedIndex],
                   SizedBox(
                     width: double.infinity,
                     height: 10,
@@ -159,7 +217,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Diet()),
+                                builder: (context) => Strength()),
                           );
                         },
                         child: Container(
@@ -245,17 +303,18 @@ class _HomePage extends State<HomePage> {
               ),
             ),
         ),
-        bottomNavigationBar: ConvexAppBar(
+      bottomNavigationBar: ConvexAppBar(
 
-          backgroundColor: Color(0xff102B46),
-          items: [
+        backgroundColor: Color(0xff102B46),
+        items: [
           TabItem(icon: Icons.home, title: "Home"),
           TabItem(icon: Icons.article, title: "Blog"),
           TabItem(icon: Icons.alarm_add, title: "Gym Time"),
           TabItem(icon: Icons.settings, title: "Settings"),
         ],
-          initialActiveIndex: 0,
-        ),
+        initialActiveIndex: 0,
+      ),
+
       );
   }
 }

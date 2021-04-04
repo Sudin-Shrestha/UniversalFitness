@@ -126,6 +126,43 @@ class _Utility extends State<Utility> {
                   ),
                 ),
               ),
+              Container(
+                constraints: BoxConstraints(maxWidth: 350.0, minHeight: 60.0),
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BmrInput()),
+                    );
+                  },
+                  color: Color(0xffDEE4E7),
+                  child: Padding(
+                    padding: EdgeInsets.all(0),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            'Stop Watch',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Colors.black,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

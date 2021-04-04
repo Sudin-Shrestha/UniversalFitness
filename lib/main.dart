@@ -4,7 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:universal_fitness/pages/home.dart';
 import 'package:universal_fitness/pages/login.dart';
 
-void main() {
+
+
+void main() async {
   //Landscape disable
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -25,6 +27,6 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
       },
     );
-    return HomePage();
+
   }
 }
