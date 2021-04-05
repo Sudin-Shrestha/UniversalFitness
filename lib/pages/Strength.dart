@@ -89,13 +89,13 @@ class _Strength extends State<Strength> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    // onTap: () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => AbsList()),
-                    //   );
-                    // },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Beginner()),
+                      );
+                    },
                     child: Container(
                       height: 180,
                       width: 380,
@@ -124,13 +124,13 @@ class _Strength extends State<Strength> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                     // onTap: () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => HiitList()),
-                    //   );
-                    // },
+                     onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Beginner()),
+                      );
+                    },
                     child: Container(
                       height: 180,
                       width: 380,

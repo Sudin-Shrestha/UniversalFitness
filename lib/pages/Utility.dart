@@ -1,10 +1,12 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:universal_fitness/main.dart';
 import 'package:universal_fitness/pages/Diet.dart';
 import 'dart:convert' as convert;
 
 import 'package:universal_fitness/pages/Exercise.dart';
+import 'package:universal_fitness/pages/StopWatch.dart';
 import 'package:universal_fitness/pages/bmi/BmiInput.dart';
 import 'package:universal_fitness/pages/bmi/BmrInput.dart';
 import 'package:universal_fitness/pages/home.dart';
@@ -134,7 +136,7 @@ class _Utility extends State<Utility> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => BmrInput()),
+                          builder: (context) => Stopwatch()),
                     );
                   },
                   color: Color(0xffDEE4E7),

@@ -3,18 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:universal_fitness/pages/home.dart';
 import 'package:universal_fitness/pages/login.dart';
+import 'package:universal_fitness/pages/Blog.dart';
 
 
 
 void main() async {
   //Landscape disable
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+  //Push Notification
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  int selectedIndex = 0;
+  final _pageOption = [HomePage(), Blog(),];
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -27,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
       },
     );
+
 
   }
 }
