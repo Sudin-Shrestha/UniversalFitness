@@ -1,17 +1,13 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:universal_fitness/main.dart';
-import 'package:universal_fitness/pages/Diet.dart';
 import 'dart:convert' as convert;
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:universal_fitness/pages/Exercise.dart';
-import 'package:universal_fitness/pages/StopWatch.dart';
-import 'package:universal_fitness/pages/bmi/BmiInput.dart';
-import 'package:universal_fitness/pages/bmi/BmrInput.dart';
 import 'package:universal_fitness/pages/home.dart';
+import 'Notice.dart';
+import 'Membership.dart';
 
 final serverEndpoint = "http://192.168.0.11/fitness/api/blog/all";
 
@@ -96,9 +92,12 @@ class _Blog extends State<Blog> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add_alert),
-            tooltip: 'Show Snackbar',
             onPressed: () {
-              const SnackBar(content: Text('This is a snackbar'));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Membership()),
+              );
             },
           ),
         ],
@@ -112,26 +111,68 @@ class _Blog extends State<Blog> {
               decoration: BoxDecoration(
                 color: Color(0xff102B46),
               ),
-              child: Text(
-                'Welcome Member',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+
+              child: Column(
+                children: [
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: CircleAvatar(
+                      child: CircleAvatar(
+                        radius: 100,
+                        backgroundImage: AssetImage('images/logo.png'),
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'Welcome Member',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Pacifico',
+                      fontSize: 19,
+                    ),
+                  ),
+                ],
               ),
             ),
             ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePage()),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.message),
-              title: Text('Messages'),
+              title: Text('Notice'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Notice()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
+              title: Text('Membership Details'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Membership()),
+                );
+              },
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-            ),
+
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text('Logout'),
@@ -182,7 +223,12 @@ class _Blog extends State<Blog> {
                             margin: EdgeInsets.only(bottom: 15, left: 15, right: 15),
                             padding: EdgeInsets.only(left: 20,),
                             height: 60,
-                            color: Color(0xffDEE4E7),
+                            decoration: BoxDecoration(
+                              border: Border(
+                                left: BorderSide(width: 10.0, color: Colors.lightBlue.shade600),
+                              ),
+                              color: Color(0xffDEE4E7),
+                            ),
 
                             child: Text(data[index].title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                             ),

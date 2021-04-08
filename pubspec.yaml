@@ -17,9 +17,6 @@ dependencies:
   convex_bottom_bar:
   http: ^0.12.2
   stop_watch_timer: ^1.1.0+1
-  flutter_local_notifications: ^1.3.0
-
-
 
 
 

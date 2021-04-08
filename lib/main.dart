@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:universal_fitness/pages/home.dart';
 import 'package:universal_fitness/pages/login.dart';
 import 'package:universal_fitness/pages/Blog.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 
 
@@ -18,8 +19,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  int selectedIndex = 0;
-  final _pageOption = [HomePage(), Blog(),];
+  // int selectedIndex = 0;
+  // final _pageOption = [HomePage(), Blog()];
 
   // This widget is the root of your application.
   @override
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/home': (context) => HomePage(),
       },
+
     );
 
 

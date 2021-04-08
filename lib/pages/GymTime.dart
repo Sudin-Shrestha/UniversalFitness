@@ -1,59 +1,39 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:universal_fitness/main.dart';
-import 'package:universal_fitness/pages/Diet.dart';
-import 'dart:convert' as convert;
-
-import 'package:universal_fitness/pages/Exercise.dart';
-import 'package:universal_fitness/pages/StopWatch.dart';
-import 'package:universal_fitness/pages/bmi/BmiInput.dart';
-import 'package:universal_fitness/pages/bmi/BmrInput.dart';
-import 'package:universal_fitness/pages/home.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'home.dart';
+import 'Notice.dart';
+import 'Membership.dart';
 
 
-class GymTime extends StatefulWidget {
-
+class GymTime extends StatelessWidget {
   @override
-  _GymTime createState() => _GymTime();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
+    );
+  }
 }
 
-class _GymTime extends State<GymTime> {
-  FlutterLocalNotificationsPlugin fltrNotification;
-
+class MyHomePage extends StatefulWidget {
   @override
-  void initState() {
-    super.initState();
-    var androidInitilize = new AndroidInitializationSettings('app_icon');
-    var iOSinitilize = new IOSInitializationSettings();
-    var initilizationsSettings =
-    new InitializationSettings(androidInitilize, iOSinitilize);
-    fltrNotification = new FlutterLocalNotificationsPlugin();
-    fltrNotification.initialize(initilizationsSettings,
-        onSelectNotification: notificationSelected);
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TimeOfDay _time = TimeOfDay(hour: 7, minute: 15);
+
+  void _selectTime() async {
+    final TimeOfDay newTime = await showTimePicker(
+      context: context,
+      initialTime: _time,
+    );
+    if (newTime != null) {
+      setState(() {
+        _time = newTime;
+      });
+    }
   }
 
-  Future _showNotification() async {
-    var androidDetails = new AndroidNotificationDetails(
-        "Channel ID", "Desi programmer", "This is my channel",
-        importance: Importance.Max);
-    var iSODetails = new IOSNotificationDetails();
-    var generalNotificationDetails =
-    new NotificationDetails(androidDetails, iSODetails);
-
-    // await fltrNotification.show(
-    //     0, "GymTime", "Get ready its show time",
-    //     generalNotificationDetails, payload: "GymTime");
-    var scheduledTime = DateTime.now().add(Duration(seconds : 10));
-    fltrNotification.schedule(1, "Times Uppp", "Schedule",
-    scheduledTime, generalNotificationDetails);
-  }
-
-
-
-  // This widget is the root of your application.
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -62,19 +42,24 @@ class _GymTime extends State<GymTime> {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
+              color: Colors.white,
               icon: const Icon(Icons.menu),
               onPressed: () { Scaffold.of(context).openDrawer(); },
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             );
           },
         ),
-        title: const Text('Universal Physical Fitness', style: TextStyle(fontFamily: 'Pacifico', fontSize: 20, letterSpacing: 1),),
+        title: const Text('Universal Physical Fitness', style: TextStyle(fontFamily: 'Pacifico', fontSize: 20, letterSpacing: 1, color: Colors.white),),
         actions: <Widget>[
           IconButton(
+            color: Colors.white,
             icon: const Icon(Icons.add_alert),
-            tooltip: 'Show Snackbar',
             onPressed: () {
-              const SnackBar(content: Text('This is a snackbar'));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Membership()),
+              );
             },
           ),
         ],
@@ -88,26 +73,68 @@ class _GymTime extends State<GymTime> {
               decoration: BoxDecoration(
                 color: Color(0xff102B46),
               ),
-              child: Text(
-                'Welcome Member',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+
+              child: Column(
+                children: [
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: CircleAvatar(
+                      child: CircleAvatar(
+                        radius: 100,
+                        backgroundImage: AssetImage('images/logo.png'),
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'Welcome Member',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Pacifico',
+                      fontSize: 19,
+                    ),
+                  ),
+                ],
               ),
             ),
             ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePage()),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.message),
-              title: Text('Messages'),
+              title: Text('Notice'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Notice()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
+              title: Text('Membership Details'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Membership()),
+                );
+              },
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-            ),
+
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text('Logout'),
@@ -115,39 +142,21 @@ class _GymTime extends State<GymTime> {
           ],
         ),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: 10,
-              ),
-              Text('Gym Time',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Pacifico',
-                    fontSize: 30,
-                    letterSpacing: 1
-                ),
-              ),
-              ElevatedButton(onPressed: _showNotification,
-                child: Text("Gymm Timme"),
-              ),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: _selectTime,
+              child: Text('SELECT GYM TIME'),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Selected time: ${_time.format(context)}', style: TextStyle(fontSize: 20),
+            ),
+          ],
         ),
       ),
-
     );
   }
-  Future notificationSelected(String payload) async {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        content: Text("Notification : $payload"),
-      ),
-    );
-  }
-
 }

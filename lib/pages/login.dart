@@ -11,18 +11,24 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPage extends State<LoginPage> {
   
-  final serverEndpoint = "http://100.64.255.76/fitness/api";
+  final serverEndpoint = "http://192.168.0.11/fitness/api";
 
   void _getUserLoginToken() {
     Navigator.pushNamed(context, "/home");
-    return;
-
     //print("hello");
     print(emailController.text + ' ' + passwordController.text);
     var map = new Map<String, dynamic>();
     map['username'] = emailController.text;
     map['password'] = passwordController.text;
-    post('/user/member/login', map).then((value) => {print(value)});
+    post('/user/member/login', map).then((value) => {print(value)}
+    );
+
+
+    // if(map['token'] != ''){
+    //   Navigator.pushNamed(context, "/home");
+    // }else{
+    //   print("Invalid user Name");
+    // }
   }
 
 
@@ -30,14 +36,15 @@ class _LoginPage extends State<LoginPage> {
     String _uri = serverEndpoint + endpoint;
     final response =  await http.get(_uri);
     return response.body;
-    var jsonResponse = convert.jsonDecode(response.body);
-    return jsonResponse['content'][0]['email'];
+    // var jsonResponse = convert.jsonDecode(response.body);
+    // return jsonResponse['content'][0]['email'];
   }
 
   Future<String> post(String endpoint, var data) async {
     String _uri = serverEndpoint + endpoint;
     final response =  await http.post(_uri, body: data);
     return response.body;
+
   }
 
   final TextEditingController emailController = new TextEditingController();

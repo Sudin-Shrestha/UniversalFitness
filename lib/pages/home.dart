@@ -4,15 +4,15 @@ import 'package:http/http.dart' as http;
 import 'package:universal_fitness/pages/Cardio.dart';
 import 'package:universal_fitness/pages/Diet.dart';
 import 'dart:convert' as convert;
-
 import 'package:universal_fitness/pages/Exercise.dart';
+import 'package:universal_fitness/pages/Membership.dart';
 import 'package:universal_fitness/pages/Strength.dart';
 import 'package:universal_fitness/pages/Trainer.dart';
 import 'package:universal_fitness/pages/Utility.dart';
-import 'package:universal_fitness/pages/bmi/BmiInput.dart';
-import 'package:universal_fitness/pages/bmi/BmrInput.dart';
 import 'Blog.dart';
 import 'GymTime.dart';
+import 'Setting.dart';
+import 'Notice.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -23,12 +23,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePage extends State<HomePage> {
 
+  // int selectedIndex = 0;
+  // final _pageOption = [HomePage(), Blog()];
 
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -46,9 +47,12 @@ class _HomePage extends State<HomePage> {
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.add_alert),
-              tooltip: 'Show Snackbar',
               onPressed: () {
-                    const SnackBar(content: Text('This is a snackbar'));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Membership()),
+                );
               },
             ),
           ],
@@ -62,26 +66,68 @@ class _HomePage extends State<HomePage> {
               decoration: BoxDecoration(
                 color: Color(0xff102B46),
               ),
-              child: Text(
-                'Welcome Member',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+
+              child: Column(
+                children: [
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: CircleAvatar(
+                      child: CircleAvatar(
+                        radius: 100,
+                        backgroundImage: AssetImage('images/logo.png'),
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'Welcome Member',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Pacifico',
+                      fontSize: 19,
+                    ),
+                  ),
+                ],
               ),
             ),
             ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePage()),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.message),
-              title: Text('Messages'),
+              title: Text('Notice'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Notice()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
+              title: Text('Membership Details'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Membership()),
+                );
+              },
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-            ),
+
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text('Logout'),
@@ -179,7 +225,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => GymTime()),
+                                builder: (context) => Cardio()),
                           );
                         },
                         child: Container(
@@ -204,7 +250,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Strength()),
+                                builder: (context) => Setting()),
                           );
                         },
                         child: Container(
@@ -263,7 +309,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Trainer()),
+                                builder: (context) => GymTime()),
                           );
                         },
                         child: Container(
@@ -300,24 +346,14 @@ class _HomePage extends State<HomePage> {
           TabItem(icon: Icons.settings, title: "Settings"),
         ],
         initialActiveIndex: 0,
-
+        // onTap: (int index){
+        //   setState(() {
+        //     selectedIndex = index;
+        //   });
+        // },
       ),
 
-      // bottomNavigationBar: ConvexAppBar(
-      //   backgroundColor: Color(0xff102B46),
-      //   items: [
-      //     TabItem(icon: Icons.home, title: "Home"),
-      //     TabItem(icon: Icons.article, title: "Blog"),
-      //     TabItem(icon: Icons.alarm_add, title: "Gym Time"),
-      //     TabItem(icon: Icons.settings, title: "Settings"),
-      //   ],
-      //   initialActiveIndex: selectedIndex,
-      //   onTap: (int index){
-      //     setState(() {
-      //       selectedIndex = index;
-      //     });
-      //   },
-      // ),
+
       );
   }
 }
