@@ -7,7 +7,7 @@ import 'dart:convert';
 
 import 'package:universal_fitness/pages/home.dart';
 
-final serverEndpoint = "http://192.168.0.11/fitness/api/notice/all";
+final serverEndpoint = "http://192.168.0.14/fitness/api/notice/all";
 
 Future <List<Data>> fetchData() async {
   final response =

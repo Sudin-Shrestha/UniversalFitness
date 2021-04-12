@@ -166,7 +166,7 @@ class _HomePage extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Blog()),
+                                builder: (context) => Exercise()),
                           );
                         },
                         child: Container(

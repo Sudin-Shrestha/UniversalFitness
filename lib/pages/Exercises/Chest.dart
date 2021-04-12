@@ -73,17 +73,49 @@ class _Chest extends State<Chest> {
   ];
 
   var descList = [
-    "Overall Chest",
-    "Center Chest",
-    "Lower Chest",
-    "Lower Chest",
-    "Overall Chest",
-    "Center Chest",
-    "Center Chest",
-    "Overall Chest",
-    "Upper Chest",
-    "Upper Chest",
-    "Upper Chest"
+    "Movement \n\n1. Lie back onto a flat bench, with your feet planted on the ground while holding a barbell with and overhead grip (palms facing away from you). "
+        "\n\n2. Inhale and slowly lower the barbell behind your head, arms bent slightly at the elbows, focusing on stretching as far as you can."
+        "\n\n3. Exhale and return the barbell back above your chest.",
+
+    "Movement \n\n1. Lie back onto a flat bench, with your bum touching the bench and feet planted on the ground."
+    "\n\n2. Grab the bar with an overhand grip and your hands wider than shoulder width apart."
+    "\n\n3. Push the bar all the way up and stop just before full extension then exhale.",
+
+    "Movement \n\n1. Stand with leg shoulder width apart, torso leaning slightly forward and arms extended with a slight bend in the elbows."
+    "\n\n2. Inhale and squeeze the arms together until the palms touch."
+    "\n\n3. Exhale and slowly open the arms until extended.",
+
+    "Movement \n\n1. Lie on a decline bench angled at 30-40 degree with your head tilted towards the floor, place your feet under the pads to anchor yourself and prevent sliding"
+    "\n\n2. Grab the bar with an overhand grip and your hands wider than shoulder width apart."
+    "\n\n3. Push the bar all the way up and stop just before full extension then exhale.",
+
+    "Movement \n\n1. Suspend yourself between the parallel bars with your arms extended."
+    "\n\n2. Inhale and bend your elbow to lower body into the dip."
+    "\n\n3. When you have dropped as low as you can go (according to your flexibility), push upwards by extending your arms back to the original position and exhale.",
+
+    "Movement \n\n1. Lie back onto a flat bench, start with your arms fully extended in front of you, palms facing each other and closer than shoulder width apart."
+    "\n\n2. Inhale and open your arms out horizontally until they are parallel with floor or as far as you can go."
+    "\n\n3. Exhale and slowly raise your arms back to the starting position.",
+
+    "Movement \n\n1. Lie back on a flat bench with your bum touching the bench. Hold the dumbbells with an overhand grip at chest height, slightly wider than shoulder width apart."
+    "\n\n2. Inhale and push the arms up vertically in a slow and controlled movement, making an arc so the dumbbells touch at the top of the movement."
+    "\n\n3. Lower the dumbbells back to chest level and exhale.",
+
+    "Movement \n\n1. Lie back onto a flat bench, with your feet planted on the ground while holding a dumbbell with your hands making a diamond shape around the handel and the weight resting in the palm of your hands."
+    "\n\n2. Inhale and slowly lower the dumbbell behind your head, arms bent slightly at the elbows, focusing on stretching as far as you can."
+    "\n\n3. Exhale and return the dumbbell back above your chest.",
+
+  "Movement \n\n1. Lie back onto a incline bench, start with your arms fully extended above you, palms facing each other and closer than shoulder width apart."
+  "\n\n2. Inhale and open your arm out horizontally until they are parallel with the floor or as far as you can go."
+  "\n\n3. Exhale and slowly raise your arms back to the starting positions.",
+
+    "Movement \n\n1. Sit on an inclined bench angled at 45 degrees, hold the dumbbells with an overhand grip at chest height, slightly wider than shoulder width apart."
+    "\n\n2. Inhale and push the arms up vertically in a controlled movement, making an arc so the dumbbells touch at the top of the movement."
+    "\n\n3. Lower the dumbbells back to chest level, towards the original starting position and exhale.",
+
+    "Movement \n\n1. Take a seat in the machine and place your forearms on the pads, grab the hand grips if the machine has them."
+    "\n\n2. Inhale and bring the arms together, squeeze when elbows are as close as they can get."
+    "\n\n3. Exhale and slowly open the arms, returning to the original starting position."
   ];
 
   // This widget is the root of your application.
@@ -148,7 +180,6 @@ class _Chest extends State<Chest> {
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.grey[500],
-
                               ),
                             ),
                           ),
@@ -181,8 +212,8 @@ showDialogFunc(context, img, title, desc) {
               color: Colors.white,
             ),
             padding: EdgeInsets.all(15),
-            height: 320,
-            width: MediaQuery.of(context).size.width * 0.7,
+            height: 570,
+            width: MediaQuery.of(context).size.width * 0.9,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -190,8 +221,8 @@ showDialogFunc(context, img, title, desc) {
                   borderRadius: BorderRadius.circular(5),
                   child: Image.asset(
                     img,
-                    width: 200,
-                    height: 200,
+                    width: 250,
+                    height: 250,
                   ),
                 ),
                 SizedBox(
@@ -209,14 +240,14 @@ showDialogFunc(context, img, title, desc) {
                   height: 10,
                 ),
                 Container(
-                  // width: 200,
+                  //width: 250,
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
                       desc,
-                      maxLines: 3,
+                      maxLines: 20,
                       style: TextStyle(fontSize: 15, color: Colors.grey[500]),
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ),

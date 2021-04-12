@@ -134,7 +134,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
-
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text('Logout'),

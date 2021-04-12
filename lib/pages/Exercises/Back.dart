@@ -78,18 +78,53 @@ class _Back extends State<Back> {
   ];
 
   var descList = [
-    "Lower Back",
-    "Back Wings",
-    "Wings",
-    "Wings",
-    "Center Back",
-    "Wings",
-    "Wings",
-    "Mid Back",
-    "Mid Back",
-    "Upper Back",
-    "Lower Back",
-    "Overall Back"
+    "Movement \n\n1. On a bench or Roman Chair, place your ankles under the roller pads and rest your lower body on the padded area."
+    "\n\n2. Inhale and raise your upper body by tilting from the hips, while maintaining a straight back so that you are horizontal."
+    "\n\n3. When you have completed the stretch, slowly control your upper body as you return to the initial position.",
+
+    "Movement \n\n1. Stand with your feet about shoulder width apart, grab the barbell in an overhead grip just wider than shoulder width. When comfortable bend your legs slightly and lean about a 45 degree angle."
+    "\n\n2. Inhale and contract your stomach muscles, this will support a straight back as you draw the barbell towards the area on your body."
+    "\n\n3. When you have achieved the contraction, exhale and return the barbell to the starting position.",
+
+    "Movement \n\n1. Grab the bar in an overhead grip, hands past shoulder width apart."
+    "\n\n2. Pull your body upwards, drawing your chest to the chin up bar. As you perform this be sure to inhale."
+    "\n\n3. Once you are level with the bar, exhale and slowly lower yourself to the starting positions.",
+
+    "Movement \n\n1. Attach the close grip handle to the Lat Pull Down Machine. Sit facing the machine and place your legs under the pads to provide anchor."
+    "\n\n2. Inhale as you bring the close grip towards the middle of your chest in a slow and controlled motion."
+    "\n\n3. Once the close grip has met your chest, slowly guide the close grip back to its starting position.",
+
+    "Movement \n\n1. Stand facing the bar, legs should be about shoulder width apart in a natural stance with the bar over the middle of your feet."
+    "\n\n2. Grasp the bar in a comfortable grip about shoulder width apart. Hold your breath while contracting your abdominal and back muscles, raise the bar with power of your legs."
+    "\n\n3. At the top of this motion ensure your arms and back are straight.",
+
+    "Movement \n\n1. Sitting in the machine secure your legs under the pads and grip the bar in an overhand grip."
+    "\n\n2. Inhale as you bring the bar towards the middle of your chest in a slow and controlled motion."
+    "\n\n3. Bring the bar to your chest, exhale and slowly extend your arms back to the original position.",
+
+    "Movement \n\n1. Put one knee and hand on a bench to support your weight. Bend over with a straight back and grab a dumbbell with a straight arm."
+    "\n\n2. Inhale and contract the stomach muscles, this helps to maintain the stability throughout this motion."
+    "\n\n3. Keep your elbow close to your body and raise it as high as possible, once at the top exhale and slowly return to the starting position.",
+
+    "Movement \n\n1. Sitting in the machine secure your legs under the pads and grip the bar in an overhand grip."
+    "\n\n2. Inhale as you bring the bar towards the rear of your neck in a slow and controlled motion."
+    "\n\n3. Keep your body stationary during this motion. Try to activate your lats without using the momentum of your body to pull the bar towards you.",
+
+    "Movement \n\n1. Grab the bar in an underhand grip with your hands about shoulder width apart."
+    "\n\n2. Inhale and raise your chest to the bar. You should feel the muscles in your back and arms activating as you do this."
+    "\n\n3. When chin has passed the bar, slowly lower yourself back down to the starting position, exhaling as you do this.",
+
+    "Movement \n\n1. Sit on the machine and place you feet on the foot rests in front and use the close grip attachment."
+    "\n\n2. Inhale and pull the close grip towards your stomach. Aim above the belly button and just below your ribs."
+    "\n\n3. Keep your elbows close to your body to ensure that you engage your upper back.",
+
+    "Movement \n\n1. Stand facing the bar, legs should be about shoulder width apart in a natural stance with the bar over the middle of your feet."
+    "\n\n2. Grasp the bar in a comfortable grip about shoulder width apart. Hold your breath while contracting your abdominal and back muscles, raise the bar."
+    "\n\n3. At the top of this motion ensure your arms and back are straight.",
+
+    "Movement \n\n1. Stand facing the bar, feet should be past shoulder width apart, closer to the weight plates on each side with your toes pointing and arms inside of your legs."
+    "\n\n2. Grasp the bar in a comfortable grip about shoulder width apart."
+    "\n\n3. At the top of this motion ensure your arms and back are straight and are not hunching forward whilst holding the bar."
   ];
 
   // This widget is the root of your application.
@@ -187,8 +222,8 @@ showDialogFunc(context, img, title, desc) {
               color: Colors.white,
             ),
             padding: EdgeInsets.all(15),
-            height: 320,
-            width: MediaQuery.of(context).size.width * 0.7,
+            height: 570,
+            width: MediaQuery.of(context).size.width * 0.9,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -196,8 +231,8 @@ showDialogFunc(context, img, title, desc) {
                   borderRadius: BorderRadius.circular(5),
                   child: Image.asset(
                     img,
-                    width: 200,
-                    height: 200,
+                    width: 250,
+                    height: 250,
                   ),
                 ),
                 SizedBox(
@@ -220,9 +255,9 @@ showDialogFunc(context, img, title, desc) {
                     alignment: Alignment.center,
                     child: Text(
                       desc,
-                      maxLines: 3,
+                      maxLines: 20,
                       style: TextStyle(fontSize: 15, color: Colors.grey[500]),
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ),

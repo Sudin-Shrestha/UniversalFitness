@@ -1,6 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
 
 
 class LoginPage extends StatefulWidget {
@@ -11,24 +12,27 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPage extends State<LoginPage> {
   
-  final serverEndpoint = "http://192.168.0.11/fitness/api";
+  final serverEndpoint = "http://192.168.0.14/fitness/api";
 
   void _getUserLoginToken() {
-    Navigator.pushNamed(context, "/home");
-    //print("hello");
-    print(emailController.text + ' ' + passwordController.text);
+    //print(emailController.text + ' ' + passwordController.text);
     var map = new Map<String, dynamic>();
     map['username'] = emailController.text;
     map['password'] = passwordController.text;
-    post('/user/member/login', map).then((value) => {print(value)}
-    );
-
-
-    // if(map['token'] != ''){
-    //   Navigator.pushNamed(context, "/home");
-    // }else{
-    //   print("Invalid user Name");
-    // }
+    try{
+      post('/user/member/login', map).then((value) => {
+            map = new Map<String, dynamic>.from(json.decode(value)),
+            print(map),
+            if(map != null && map["token"] != ''){
+            // SharedPreference.set("user_data", map["0"]),
+            Navigator.pushNamed(context, "/home"),
+            } else {
+            print("Invalid login credientials"),
+            }
+      });
+    } catch (e) {
+      print("Invalid Login Details");
+    };
   }
 
 
@@ -41,9 +45,14 @@ class _LoginPage extends State<LoginPage> {
   }
 
   Future<String> post(String endpoint, var data) async {
-    String _uri = serverEndpoint + endpoint;
-    final response =  await http.post(_uri, body: data);
-    return response.body;
+    try{
+      String _uri = serverEndpoint + endpoint;
+      final response =  await http.post(_uri, body: data);
+      return response.body;
+    }
+    catch (e) {
+      return null;
+    }
 
   }
 
