@@ -12,7 +12,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPage extends State<LoginPage> {
   
-  final serverEndpoint = "http://192.168.0.14/fitness/api";
+  final serverEndpoint = "http://192.168.1.64/fitness/api";
 
   void _getUserLoginToken() {
     //print(emailController.text + ' ' + passwordController.text);
@@ -28,6 +28,7 @@ class _LoginPage extends State<LoginPage> {
             Navigator.pushNamed(context, "/home"),
             } else {
             print("Invalid login credientials"),
+
             }
       });
     } catch (e) {

@@ -83,19 +83,57 @@ class _Shoulder extends State<Shoulder> {
   ];
 
   var descList = [
-    "Lateral Deltoid",
-    "Anterior Deltoid",
-    "Anterior",
-    "Lateral Deltoid",
-    "Anterior Deltoid",
-    "Lateral Deltoid",
-    "Trapezius muscles",
-    "Posterior Deltoid",
-    "Lateral Deltoid",
-    "Anterior Deltoid",
-    "Posterior Deltoid",
-    "Lateral Deltoid",
-    "Anterior",
+    "Movement \n\n1. Sit on the edge of bench or a shoulder press frame with your feet on the ground and back straight. Hold the dumbbells at shoulder height with an underhand grip."
+        "\n\n2. Inhale and press upwards, as you extend your arms twist your wrists so when the motion is completed your palms are in an overhand grip."
+        "\n\n3. Exhale and slowly lower the dumbbells to the starting position.",
+
+    "Movement \n\n1. Stand with your feet in a natural stance and back straight, holding a barbell with an overhand grip."
+        "\n\n2. Inhale and raise the bar until it is horizontal with the ground. Keep your arms extended with a slight bend in the elbows"
+        "\n\n3. Exhale and slowly return to the starting position.",
+
+    "Movement \n\n1. Stand with your feet, shoulder width apart and keep your chest up as you hold the barbell."
+        "\n\n2. Leading with your hands, explode up through your legs and raise the barbell along."
+        "\n\n3. Exhale and slowly return to the starting position.",
+
+    "Movement \n\n1. Stand with your feet in a natural stance and back straight, holding a barbell with an overhand grip slightly closer than shoulder width."
+        "\n\n2. Inhale and raise the bar close to your body until it reaches under your chin, keeping your elbows up as high as possible."
+        "\n\n3. Exhale and slowly lower the bar to the starting position.",
+
+    "Movement \n\n1. Stand with your feet shoulder width apart, bending forward at the hips with a straight back, holding the cable close to your body."
+        "\n\n2. Inhale and raise the cable until your arm is horizontal with the ground. Keep your arm extended with a slight bend in the elbow."
+        "\n\n3. Exhale and slowly return to the starting position. Once you have completed one side alternate to the other.",
+
+    "Movement \n\n1. Stand with your feet in a natural stance, back straight and dumbbells hanging in front of you with your palms facing your thighs."
+        "\n\n2. Inhale and raise one dumbbell until it bis horizontal with the ground. Keep your arm extended with a slight bend in the elbow."
+        "\n\n3. Exhale and slowly return to the starting position the alternate to the other arm.",
+
+    "Movement \n\n1. Stand with your feet, shoulder width apart and keep your chest up as you hold the dumbbells."
+        "\n\n2. Leading with your hands, explode up through your legs and raise the dumbbells along."
+        "\n\n3. Exhale and slowly return to the starting position.",
+
+    "Movement \n\n1. Stand facing the cable machine with the pulley raised slightly higher than head height. With your shoulder back and arms outstretched grab the rope with an overhand grip."
+        "\n\n2. Squeeze your shoulder blades back and bring the rope towards your forehead."
+        "\n\n3. Hold for one second and slowly lower back to the original position.",
+
+    "Movement \n\n1. Stand holding a barbell at shoulder height."
+        "\n\n2. Explode up, pushing the weight to the ceiling until your arms are fully extended."
+        "\n\n3. Bend your elbows and slowly lower the weights to the starting position.",
+
+    "Movement \n\n1. Sit on the edge of a bench or a shoulder press frame with your feet on the ground and back straight."
+        "\n\n2. Grab the bar with an overhand grip. Inhale and press upwards, extending your arms almost to full extension."
+        "\n\n3. Exhale and slowly lower the bar to the starting position.",
+
+    "Movement \n\n1. Sit on the edge of a bench with your feet on the ground, bending forward at the hips with a straight back, holding the cables close to your body."
+        "\n\n2. Inhale and raise your arms until they are horizontal with the ground."
+        "\n\n3. Exhale and slowly return to the starting position.",
+
+    "Movement \n\n1. Sit in the machine under the handles with your back on the pad, feet planted on the ground and hands holding the grips."
+        "\n\n2. Inhale and press upwards, extending your arms almost to full extension."
+        "\n\n3. Exhale and slowly lower the machine back to the starting position.",
+
+    "Movement \n\n1. Stand with your feet, shoulder width apart and keep your chest up as you hold the barbell."
+        "\n\n2. Leading with your hands, explode up through your legs and raise the barbell along."
+        "\n\n3. Exhale and slowly return to the starting position.",
   ];
 
   // This widget is the root of your application.
@@ -193,8 +231,8 @@ showDialogFunc(context, img, title, desc) {
               color: Colors.white,
             ),
             padding: EdgeInsets.all(15),
-            height: 320,
-            width: MediaQuery.of(context).size.width * 0.7,
+            height: 570,
+            width: MediaQuery.of(context).size.width * 0.9,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -202,8 +240,8 @@ showDialogFunc(context, img, title, desc) {
                   borderRadius: BorderRadius.circular(5),
                   child: Image.asset(
                     img,
-                    width: 200,
-                    height: 200,
+                    width: 250,
+                    height: 250,
                   ),
                 ),
                 SizedBox(
@@ -226,9 +264,9 @@ showDialogFunc(context, img, title, desc) {
                     alignment: Alignment.center,
                     child: Text(
                       desc,
-                      maxLines: 3,
+                      maxLines: 20,
                       style: TextStyle(fontSize: 15, color: Colors.grey[500]),
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ),

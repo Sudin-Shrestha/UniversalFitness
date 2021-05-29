@@ -9,7 +9,7 @@ import 'package:universal_fitness/pages/home.dart';
 import 'Notice.dart';
 import 'Membership.dart';
 
-final serverEndpoint = "http://192.168.0.11/fitness/api/blog/all";
+final serverEndpoint = "http://192.168.1.64/fitness/api/blog/all";
 
 Future <List<Data>> fetchData() async {
   final response =
@@ -50,20 +50,7 @@ class Blog extends StatefulWidget {
 }
 
 class _Blog extends State<Blog> {
-  // final serverEndpoint = "http://192.168.0.11/fitness/api/blog/all";
-  //
-  // List data;
-  // Future<String> getData() async {
-  //   http.Response response = await http.get(Uri.encodeFull(serverEndpoint),
-  //       headers: {
-  //         "Accept": "application/json"
-  //       }
-  //   );
-  //   this.setState(() {
-  //     data = convert.jsonDecode(response.body);
-  //   });
-  //   print (data);
-  // }
+
 
   Future <List<Data>> futureData;
   @override

@@ -82,19 +82,57 @@ class _Biseps extends State<Biseps> {
   ];
 
   var descList = [
-    "Coracobrachialis ",
-    "Brachii",
-    "Coracobrachialis",
-    "Coracobrachialis",
-    "Coracobrachialis",
-    "Brachii",
-    "Brachialis",
-    "Coracobrachialis",
-    "Coracobrachialis",
-    "Coracobrachialis",
-    "Brachialis",
-    "Brachialis",
-    "Brachii"
+    "Movement \n\n1. Pickup the barbell with an underhand grip (palms facing up), hands slightly wider than shoulder width, keeping your arms close to your body and your back straight."
+    "\n\n2. Inhale and raise the bar toward your chest by bending at the elbows."
+    "\n\n3. Slowly lower the bar back to the ground in a controlled movement and exhale.",
+
+    "Movement \n\n1. Stand facing the cable machine with your back straight and set the cable as low as it will go. Grab the rope with both hands with a natural grip."
+    "\n\n2. Inhale and raise your hands up to your chest by bending at the elbow while keeping the rest of your arm still."
+    "\n\n3. Slowly lower the pulley down and exhale.",
+
+    "Movement \n\n1. Sit with your legs open, leaning forward with one arm hanging to the floor while holding a dumbbell and your elbow touching your inner thigh."
+    "\n\n2. Inhale and raise the dumbbell so it touches your chest while keeping your arm still."
+    "\n\n3. Slowly lower the dumbbell back to the floor and exhale.",
+
+    "Movement \n\n1. Stand with your feet shoulder width apart and a straight back, holding a dumbbell in each hand hanging at your sides with palms facing each other."
+    "\n\n2. Inhale and raise one hand up towards your chest while turning your wrist so your palm faces you."
+    "\n\n3. Slowly lower the dumbbell down and alternate to the other arm.",
+
+    "Movement \n\n1. Sit at the preacher bench, arms shoulder width apart and resting on the pad, holding the dumbbells in an underhand grip."
+    "\n\n2. Inhale and raise the dumbbells to your head, either together or alternating, focus on the contraction."
+    "\n\n3. Slowly lower the dumbbells back to the starting position and exhale, don't let the weights free-fall.",
+
+    "Movement \n\n1. Sit or stand with your back straight, holding a dumbbell in each hand like you would a hammer."
+    "\n\n2. Inhale and raise the dumbbells either at the same time or alternating by bending at the elbow while keeping the rest of your arm still."
+    "\n\n3. Slowly lower the dumbbells back to the floor and exhale.",
+
+    "Movement \n\n1. Stand facing the cable machine with your back straight and set the cable as low as it will go, your arm should be close to your body. Grab the handle with both hands with an underhand grip."
+    "\n\n2. Inhale and raise your hands up to your chest by bending at the elbow."
+    "\n\n3. Slowly lower the pulley down and exhale.",
+
+    "Movement \n\n1. Sit at the machine, arms shoulder width apart and resting on the pad, holding the bar in an underhand grip."
+    "\n\n2. Inhale and raise the bar to your head, focusing on the contraction."
+    "\n\n3. Slowly lower the bar back to the starting position and exhale, don't let the weights free-fall.",
+
+    "Movement \n\n1. Rest one arm on the pad, fully extended, holding a dumbbell with an underhand grip."
+        "\n\n2. Inhale and raise the dumbbell toward your chest by bending at the elbow while keeping the rest of your arm still."
+        "\n\n3. Slowly lower the dumbbell back to the ground in a controlled movement and exhale.",
+
+    "Movement \n\n1. Sit at the preacher bench, arms shoulder width apart and resting on the pad, holding the bar in an underhand grip."
+        "\n\n2. Inhale and raise the bar to your head, focusing on the contraction."
+        "\n\n3. Slowly lower the bar back to the starting position and exhale, don't let the weights free-fall.",
+
+    "Movement \n\n1. Stand with your back straight, arms extended and slightly wider than shoulder width apart, holding dumbbells in overhand grip."
+        "\n\n2. Inhale and raise your hands to your chest, knuckles pointing up, bending at the elbows while keeping the rest of your arm still."
+        "\n\n3. Slowly lower the dumbbells back to the floor and exhale.",
+
+    "Movement \n\n1. Sit  with your back straight, holding a dumbbell in each hand hanging at your sides with palms facing each other."
+        "\n\n2. Inhale and raise your hands up towards your chest while turning your wrists so your palms face you."
+        "\n\n3. Slowly lower the dumbbells back to the floor and exhale. You can also do this exercise using alternating sides.",
+
+    "Movement \n\n1. Sit on an incline bench, angled between 45-60 degree, holding a dumbbell in each hand hanging at your sides with palms facing each other."
+        "\n\n2. Inhale and raise your hands up towards your chest while turning your wrists so your palms face you."
+        "\n\n3. Slowly lower the dumbbells back to the floor and exhale. You can also do this exercise using alternating sides.",
   ];
 
   // This widget is the root of your application.
@@ -192,8 +230,8 @@ showDialogFunc(context, img, title, desc) {
               color: Colors.white,
             ),
             padding: EdgeInsets.all(15),
-            height: 320,
-            width: MediaQuery.of(context).size.width * 0.7,
+            height: 570,
+            width: MediaQuery.of(context).size.width * 0.9,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -201,8 +239,8 @@ showDialogFunc(context, img, title, desc) {
                   borderRadius: BorderRadius.circular(5),
                   child: Image.asset(
                     img,
-                    width: 200,
-                    height: 200,
+                    width: 250,
+                    height: 250,
                   ),
                 ),
                 SizedBox(
@@ -225,9 +263,9 @@ showDialogFunc(context, img, title, desc) {
                     alignment: Alignment.center,
                     child: Text(
                       desc,
-                      maxLines: 3,
+                      maxLines: 20,
                       style: TextStyle(fontSize: 15, color: Colors.grey[500]),
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ),
